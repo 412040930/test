@@ -1,0 +1,27 @@
+doctype 5
+html
+	head
+		meta(charset='utf-8')
+	body
+		hello word#{name}
+		p my name is #{name},do you know
+		-var a=new Array()	
+		-for(var i=0; i<citys.length; i++) 
+			-	a.push(citys[i])
+			-	a[a.length-1] = a[a.length-1] + "_1"		
+		p	old:#{a.length},#{a}
+		-a.push('青岛')
+		p	new:#{a.length},#{a}
+		p #{h1}
+		table(border=1)
+			tr
+				th hello
+				th world,citys.count=#{cscores.length+3}
+				th count
+			for city,index in citys
+				tr
+					td=index
+					td #{city}
+					td=cscores[index]
+		for score,index in cscores
+			p #{score}
